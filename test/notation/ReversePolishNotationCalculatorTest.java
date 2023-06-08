@@ -61,4 +61,5 @@ public class ReversePolishNotationCalculatorTest {
 
         assertEquals(expected, result, "ошибка выполнения операции с множеством пробелов");
     }
+    //ей, конец!
 }
