@@ -1,0 +1,62 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+public class BankAccountTest {
+
+    @Test
+    public void shouldNotBeBlockedWhenCreated() {
+        BankAccount account = new BankAccount("a", "b");
+        assertFalse(account.isBlocked());
+    }
+
+    @Test
+    public void shouldReturnZeroAmountAfterActivation() {
+        BankAccount account = new BankAccount("a", "b");
+        account.activate("RUB");
+        assertEquals(new Integer(0), account.getAmount());
+        assertEquals("RUB", account.getCurrency());
+    }
+
+
+    @Test
+    public void shouldBeBlockedAfterBlockIsCalled() {
+        BankAccount account = new BankAccount("a", "b");
+        account.block();
+        assertTrue(account.isBlocked());
+    }
+
+    @Test
+    public void shouldReturnFirstNameThenSecondName() {
+        BankAccount account = new BankAccount("a", "b");
+        String[] nameData = new String[] {"a", "b"};
+        String[] bankNamedata = new String[] account.getFullName();
+        assertArrayEquals(arrayTwo, arrayOne);
+    }
+
+    @Test
+    public void shouldReturnNullAmountWhenNotActive() {
+                final ArithmeticException exception = assertThrows(
+                // класс ошибки
+                IllegalStateException.class,
+
+                // создание и переопределение экземпляра класса Executable
+                new Executable() {
+                    @Override
+                    public void execute() {
+                        BankAccount account = new BankAccount("a", "b");
+                        account.getAmount();
+                        String currency = account.getCurrency();
+                        assertNull(currency);
+
+
+                        // здесь блок кода, который хотим проверить
+                        // при делении на 0 ожидаем ArithmeticException
+
+                    }
+                });
+    }
+    }
